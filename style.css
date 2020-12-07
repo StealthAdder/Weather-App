@@ -1,0 +1,104 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    /* justify-content: center; */
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(rgb(47,150,163), rgb(48,54,143));
+    font-family: sans-serif;
+    color: white;
+}
+
+.location, .temperature {
+    height: 20vh;
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center; 
+}
+.location1 {
+    height: 15vh;
+    width: 50%;
+    /* flex-direction: row; */
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+.set-btn, a {
+    font-size: 20px;
+    padding: 10px 10px;
+    color: white;
+    text-decoration: none;
+}
+
+.temperature {
+    height: 25vh;
+    flex-direction: column;
+}
+
+.degree-section {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+} 
+
+.degree-section span {
+    margin: 10px;
+    font-size: 30px;
+}
+
+.degree-section h2 {
+    font-size: 40px;
+}
+
+.temperature-description {
+    font-size: 2.5rem;
+}
+
+.wicon {
+    pointer-events: none;
+    max-height: 50%;
+}
+
+.infoMsg {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* Search based on City */
+.c-search {
+    border-style: none;
+    border-radius: 0.2rem;
+    min-width: 300px;
+    padding: 8px 16px;
+    font-size: 1.5rem;
+    margin: 5px;
+}
+
+.city {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    /* padding: 5px; */
+}
+
+.fa ,.fa-search, .fa-2x {
+    pointer-events: none;
+    cursor: pointer;
+    color: white;
+}
+
+.s-btn {
+    cursor: pointer;
+    padding: 6px 6px;
+    border-radius: 5rem;
+    border-style: none;
+    background-color: transparent;
+}
