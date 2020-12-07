@@ -1,4 +1,3 @@
-
 window.addEventListener('load', () => {
 
     let long;
@@ -37,6 +36,12 @@ window.addEventListener('load', () => {
                         const { main, description, icon } = data.weather[0];
                         const { temp } = data.main;
                         console.log(temp);
+                        // insert the °F
+                        if (temperatureSpan.textContent != "°F") {
+                                let temperatureSpan = document.querySelector(".temperature span");
+                                temperatureSpan.textContent = "°F";
+                                // temperatureSpan.innerHTML = "°F";
+                        }
                         temperatureDegree.textContent = temp;
                         // const descrp = description.toIpp;
                         temperatureDescription.textContent = description;

@@ -6,7 +6,7 @@ window.addEventListener('load', () => {
     let locationTimezone = document.querySelector(".location-timezone");
     let temperatureSection = document.querySelector(".degree-section");
     let locationIcon = document.querySelector('.weather-icon');
-    const temperatureSpan = document.querySelector('.temperature span');
+    let temperatureSpan = document.querySelector('.temperature span');
     const infoMsg = document.querySelector(".infoMsg");
 
     // Event listener
@@ -74,6 +74,7 @@ window.addEventListener('load', () => {
                     
                     // Change F to C
                     temperatureSection.addEventListener('click', changeTemp);
+                    
 
                     function changeTemp(event) {
                         if (temperatureSpan.textContent === "°F") {
@@ -85,7 +86,7 @@ window.addEventListener('load', () => {
                         }
                     }
                 }
-                searchCity.value = "";                
+                searchCity.value = "";
             })
     }
 
