@@ -11,7 +11,6 @@ window.addEventListener('load', () => {
 
     // Event listener
     searchIcon.addEventListener('click', getCity);
-
     // Function
     function getCity (event) {
         event.preventDefault();
@@ -31,14 +30,24 @@ window.addEventListener('load', () => {
             .then(data => {
                 console.log(data);
                 if (data.cod == "404") {
-                    // function reset () {
-                    //     let error = data.message;
-                    //     let ERROR = error.toUpperCase()
-                    //     infoMsg.innerHTML = `"${searchCity.value.toUpperCase(searchCity.value)}" ${ERROR}`;
-                    //     searchCity.value = "";
-                    // }
+                    reset();
+                    
+                    function reset () {
+                        let error = data.message;
+                        let ERROR = error.toUpperCase()
+                        infoMsg.innerHTML = `"${searchCity.value.toUpperCase(searchCity.value)}" ${ERROR}`;
+                        searchCity.value = "";
+                        temperatureDegree.innerHTML = "";
+                        temperatureDescription.innerHTML = "";
+                        locationTimezone.innerHTML = "";
+                        locationIcon.innerHTML = "";
+                        temperatureSpan.innerHTML = "";
+                        temperatureSection.innerHTML = "";
+                        setTimeout(()=> {infoMsg.innerHTML = ""}, 1000);
+                    }
 
                 } else {
+                    infoMsg.innerHTML = "";
                     const { main, description, icon } = data.weather[0];
                     const { temp } = data.main;
                     const { speed, deg} = data.wind;
@@ -63,28 +72,21 @@ window.addEventListener('load', () => {
                     if (temperatureSpan.textContent != "°F") {
                         let temperatureSpan = document.querySelector(".temperature span");
                         temperatureSpan.textContent = "°F";
-                        // temperatureSpan.innerHTML = "°F";
                     }
 
-                    temperatureDegree.textContent = temp;
+                    const degree = document.querySelector('.degree-section');
+                    let tempsync = document.querySelector('.temp-btn');
+                    tempsync.innerHTML = `<i class="fa fa-sync fa-2x"></i>`;
+                    degree.appendChild(tempsync);
+    
+
+
+                    temperatureDegree.textContent = Math.floor(temp);
                     temperatureDescription.textContent = description;
                     locationTimezone.textContent = data.name;
                     let celsius = (temp - 32) * (5 / 9);
                     locationIcon.innerHTML = `<img src=http://openweathermap.org/img/wn/${icon}@4x.png>`;
                     
-                    // Change F to C
-                    temperatureSection.addEventListener('click', changeTemp);
-                    
-
-                    function changeTemp(event) {
-                        if (temperatureSpan.textContent === "°F") {
-                            temperatureSpan.textContent = "°C";
-                            temperatureDegree.textContent = Math.floor(celsius);
-                        } else {
-                            temperatureSpan.textContent = "°F";
-                            temperatureDegree.textContent = temp;
-                        }
-                    }
                 }
                 searchCity.value = "";
             })

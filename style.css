@@ -89,16 +89,33 @@ body {
     /* padding: 5px; */
 }
 
-.fa ,.fa-search, .fa-2x {
+.fa ,.fa-search, .fa-2x{
     pointer-events: none;
     cursor: pointer;
     color: white;
+}
+
+.fa-sync {
+    cursor: pointer;
+    background-color: transparent;
+    color: lightsteelblue;
+}
+
+.temp-btn {
+    background-color: transparent;
+    /* border-style: none; */
+    border-color: transparent;
+    cursor: pointer;
+    padding: 5px;
+    outline: none;
 }
 
 .s-btn {
     cursor: pointer;
     padding: 6px 6px;
     border-radius: 5rem;
+    outline: none;
     border-style: none;
     background-color: transparent;
 }
+
