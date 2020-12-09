@@ -7,7 +7,6 @@
 body {
     height: 100vh;
     display: flex;
-    /* justify-content: center; */
     flex-direction: column;
     align-items: center;
     background: linear-gradient(rgb(47,150,163), rgb(48,54,143));
@@ -22,6 +21,11 @@ body {
     justify-content: space-around;
     align-items: center; 
 }
+.location {
+    width: 35%;
+    height: 15h;
+}
+
 .location1 {
     height: 15vh;
     width: 50%;
@@ -38,38 +42,31 @@ body {
     text-decoration: none;
 }
 
-.temperature {
+/* .temperature {
     height: 25vh;
     flex-direction: column;
-}
+} */
 
-.degree-section {
+/* .degree-section {
     display: flex;
     align-items: center;
     cursor: pointer;
-} 
+}  */
 
-.degree-section span {
+/* .degree-section span {
     margin: 10px;
     font-size: 30px;
-}
+} */
 
-.degree-section h2 {
+/* .degree-section h2 {
     font-size: 40px;
-}
+} */
 
-.temperature-description {
-    font-size: 2.5rem;
-}
+
 
 .wicon {
     pointer-events: none;
     max-height: 50%;
-}
-
-.infoMsg {
-    font-weight: bold;
-    font-size: 1.2rem;
 }
 
 /* Search based on City */
@@ -80,6 +77,7 @@ body {
     padding: 8px 16px;
     font-size: 1.5rem;
     margin: 5px;
+    outline: none;
 }
 
 .city {
@@ -95,7 +93,7 @@ body {
     color: white;
 }
 
-.fa-sync {
+.fa-sync-alt {
     cursor: pointer;
     background-color: transparent;
     color: lightsteelblue;
@@ -106,7 +104,7 @@ body {
     /* border-style: none; */
     border-color: transparent;
     cursor: pointer;
-    padding: 5px;
+    padding: 5px ;
     outline: none;
 }
 
@@ -119,3 +117,55 @@ body {
     background-color: transparent;
 }
 
+/* details sun rise and set */
+
+.weather-details {
+    display: flex;
+}
+
+
+.sunrise, .sunset, .humidity {
+    /* margin: 5px 15px; */
+    padding: 5px 20px;
+    /* display: block; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.degree-section {
+    padding: 5px 20px;
+}
+
+/* TEMP SECTION */
+.temperature-degree {
+    font-weight: bolder;
+    font-size: 22px;
+}
+
+.tempR {
+    font-weight: bolder;
+    font-size: 23px;
+}
+
+.temperature-description {
+    font-size: 2rem;
+}
+
+/* titles in the detail section */
+.s-title, .ss-title, .h-title, .tp-title{
+    padding: 5px;
+}
+
+.sunrise-time, .sunset-time, .humid-perct {
+    padding: 5px;
+}
+
+.temperature-degree {
+    padding: 10px 0px 0px 5px;
+}
+
+.tempR {
+    padding: 10px 0px 0px 0px;
+}

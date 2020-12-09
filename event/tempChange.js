@@ -1,13 +1,6 @@
 let tempR = document.querySelector('.tempR');
 let tempDegree = document.querySelector('.temperature-degree');
 
-
-// create listener
-// tempR.addEventListener('click', tempChange);
-
-// function
-console.log("TempChange Connected");
-
 function tempChange () {
     let temp = tempConv()
     if (tempR.textContent == "°F") {
@@ -19,11 +12,6 @@ function tempChange () {
         tempDegree.innerHTML = temp;
     }
 }
-
-
-
-// console.log(temp[0]);
-// console.log(temp[1]);
 
 function tempConv () {
     let F, C;

@@ -19,22 +19,49 @@
                     <i class="fa fa-search fa-2x"></i>
                 </button>
             </div>
+            
         </form>
     </div>
-    <div class="info"><p class="infoMsg"></p></div>
     <div class="location">
         <h1 class="location-timezone"></h1>
         <div class="weather-icon"><img src="Error.src" onerror="this.style.display='none'"></div>
     </div>
-    <div class="temperature">
+    <div class="weather-details">
+        <div class="sunrise">
+            <h4 class="s-title"></h4>
+            <span class="sun"></span>
+            
+            <h3 class="sunrise-time"></h3>
+        </div>
+        <div class="sunset">
+            <h4 class="ss-title"></h4>
+            <span class="moon"></span>
+            <h3 class="sunset-time"></h3>
+        </div>
+        <div class="humidity">
+            <h4 class="h-title"></h4>
+            <span class="tint"></span>
+            <h3 class="humid-perct"></h3>
+        </div>
+        <!-- work on making it stay on this details -->
+        <div class="degree-section">
+            <h4 class="tp-title"></h4>
+            <span class="temperature-degree"></span>
+            <span class="tempR"></span>
+            <button class="temp-btn" onclick="tempChange()"></button>
+        </div>
+    </div>
+    <div class="temperature-description"></div>
+    
+    <!-- <div class="temperature">
         <div class="degree-section">
             <h2 class="temperature-degree"></h2>
             <span class="tempR"></span>
             <button class="temp-btn" onclick="tempChange()"></button>
         </div> 
         <div class="temperature-description"></div>
-    </div>
-    <script src="searchV1.js"></script>
+    </div> -->
+    <script src="search.js"></script>
     <script src="event/tempChange.js"></script>
 </body>
 </html>
