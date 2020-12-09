@@ -17,6 +17,8 @@ window.addEventListener('load', () => {
     // Function
     function getCity (event) {
         event.preventDefault();
+        // removeEventListener the gps
+        
         const city = searchCity.value;
         // use different one.
         const API_KEY = 'd79833c05a478f4a18930dd92e8b6d12';
@@ -84,6 +86,7 @@ window.addEventListener('load', () => {
 
                             let humidPerct = document.querySelector('.humid-perct');
 
+                            let currentTime = document.querySelector('.current-time');
                             
                             //// SUNRISE INSTANCE ////
                             let sunrStr = sunrise.split(" ");
@@ -100,6 +103,18 @@ window.addEventListener('load', () => {
                             let sunsetDate = sunsStr[0];
                             let ssetTime = sunsStr[1];
 
+                            //// CURRENT TIME ////
+                            let ctime = time.split(" ");
+
+                            // Time = time
+                            let Time = ctime[1];
+                            let cdate = ctime[0];
+                            let ccdate = cdate.split("-");
+
+                            let y = ccdate[0];
+                            let m = ccdate[1];
+                            let d = ccdate[2];
+                            
 
                             // console.log(`Sun rise time: ${sriseTime}`);
                             // console.log(`Sunset time: ${ssetTime}`);
@@ -114,22 +129,28 @@ window.addEventListener('load', () => {
                                 const ssTitle = document.querySelector('.ss-title');
                                 const hTitle = document.querySelector('.h-title');
                                 const tpTitle = document.querySelector('.tp-title');
+                                const cTitle = document.querySelector('.c-title');
+                                
 
                                 sTitle.innerHTML = "Sunrise";
                                 ssTitle.innerHTML = "Sunset";
                                 hTitle.innerHTML = "Humidity";
                                 tpTitle.innerHTML = "Temperature";
+                                cTitle.innerHTML = "Current Time";
 
 
                                 // Def all the spans
                                 let sun = document.querySelector('.sun')
                                 let moon = document.querySelector('.moon');
                                 let tint = document.querySelector('.tint');
+                                let clock = document.querySelector('.time-clock');
 
                                 sun.innerHTML = `<i class="fa fa-sun fa-2x"></i>`;
                                 moon.innerHTML = `<i class="fa fa-moon fa-2x"></i>`;
                                 tint.innerHTML = `<i class="fas fa-tint fa-2x"></i>`;
+                                clock.innerHTML = `<i class="far fa-clock fa-2x"></i>`;
                             }
+
 
                             // Call the prepDetails
                             prepDetails();
@@ -140,6 +161,7 @@ window.addEventListener('load', () => {
                             sunsetTime.innerHTML = ssetTime;
                             // add humidity value
                             humidPerct.innerHTML = `${humidity}%`;
+                            currentTime.innerHTML = `${Time} ${d}-${m}-${y}`;
                         })
 
 
@@ -150,17 +172,6 @@ window.addEventListener('load', () => {
                 // new api
                 
             })
-            
-                // // use data
-                // .then(time_data => {
-                //     console.log(time_data);
-                //     // code here;
-                // })
 
     }
-
-
-    
-
-    
 });

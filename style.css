@@ -9,21 +9,29 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: linear-gradient(rgb(47,150,163), rgb(48,54,143));
+    /* background: linear-gradient(rgb(47,150,163), rgb(48,54,143)); */
     font-family: sans-serif;
     color: white;
+
+    background-color: #000000;
+    background-image: linear-gradient(147deg, #000000 0%, #2c3e50 74%);
+
+
+    /* background-color: #2d3436;
+    background-image: linear-gradient(315deg, #2d3436 0%, #000000 74%); */
+
 }
 
 .location, .temperature {
-    height: 20vh;
+    height: 15vh;
     width: 50%;
     display: flex;
     justify-content: space-around;
     align-items: center; 
 }
 .location {
-    width: 35%;
-    height: 15h;
+    height: 22vh;
+    width: 60%;
 }
 
 .location1 {
@@ -87,10 +95,14 @@ body {
     /* padding: 5px; */
 }
 
-.fa ,.fa-search, .fa-2x{
+.fa ,.fa-search-location, .fa-2x, .fa-map-marked-alt{
     pointer-events: none;
     cursor: pointer;
     color: white;
+}
+
+.fa-map-marked-alt-geoloc-red {
+    color: rgb(255, 32, 32);
 }
 
 .fa-sync-alt {
@@ -108,7 +120,7 @@ body {
     outline: none;
 }
 
-.s-btn {
+.s-btn,  .l-btn{
     cursor: pointer;
     padding: 6px 6px;
     border-radius: 5rem;
@@ -124,7 +136,7 @@ body {
 }
 
 
-.sunrise, .sunset, .humidity {
+.sunrise, .sunset, .humidity, .current-time-section{
     /* margin: 5px 15px; */
     padding: 5px 20px;
     /* display: block; */
@@ -150,7 +162,9 @@ body {
 }
 
 .temperature-description {
+    padding: 10px 5px;
     font-size: 2rem;
+    text-transform: capitalize;
 }
 
 /* titles in the detail section */
@@ -169,3 +183,73 @@ body {
 .tempR {
     padding: 10px 0px 0px 0px;
 }
+
+/* Current Time info */
+/* .current-time-section {
+    display: flex;
+    padding: 5px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+} */
+
+.current-time, .time-clock{
+    padding: 5px;
+}
+
+/* title center */
+.c-title {
+    text-align: center;
+}
+
+img {
+    border-radius: 2rem;
+    border-style: none;
+    width: 160px;
+    height: 160px;
+    outline: none;
+}
+
+/* Beta style */
+
+.beta {
+    border-style: inset;
+    padding: 3px 6px;
+
+    border-radius: 1.2rem;
+    border-color: #3FB950;
+    /* background-color: #3b3b3b; */
+    color: #3FB950;
+}
+
+/* footer */
+
+.footer {
+    /* display: block; */
+    /* float: right; */
+    /* justify-content: end; */
+}
+
+.footer-msg {
+    color: #000000;
+    margin-top: 5vh;
+    margin-left: 40%;
+}
+
+
+/* CREDITS */
+.fa-user-ninja::after,.fa-user-ninja::before, .fa-jedi-order::after,.fa-jedi-order::before, .fa-github {
+    color: #000000;
+}
+
+.footer-title , .credit-title{
+    padding: 2px 2px;
+    float: right;
+}
+
+.linkers {
+    padding: 5px;
+    /* width: 10px; */
+    /* height: 10px; */
+}
+
