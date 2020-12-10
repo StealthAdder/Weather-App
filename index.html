@@ -5,22 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
-    <title>Weather App</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="icon/weather-app.png" type="image/x-icon">
+    <title>Luke Howard's Weather App</title>
 </head>
 <body>
     <div class="location1">
-        <a href="/index.html"><h1>Weather App</h1></a>
+        <a href="/index.html"><h1 style="text-align: center;">Luke Howard's Weather App</h1></a>
         <h5 class="beta">beta</h5>
     </div>
-    <div class="location1">
+    <div class="location-search">
+        GEO
         <button title="Click twice" class="l-btn" type="submit" name="loc" onclick="geoLoc()">
             <i class="fa fa-map-marked-alt fa-2x"></i>
         </button>
+        
         <form>
             <div class="city">
                 <input class="c-search" type="text" placeholder="Search for city">
                 <button class="s-btn" type="submit" name="search">
-                    <i class="fa fa-search-location fa-2x"></i>
+                    <i class="fa fa-search fa-2x"></i>
                 </button>
             </div>
             
@@ -51,7 +56,11 @@
             <span class="tint"></span>
             <h3 class="humid-perct"></h3>
         </div>
-        <!-- work on making it stay on this details -->
+        <div class="Wind">
+            <h4 class="w-title"></h4>
+            <span class="speez"></span>
+            <h3 class="wind-speed"></h3>
+        </div>
         <div class="degree-section">
             <h4 class="tp-title"></h4>
             <span class="temperature-degree"></span>
@@ -62,14 +71,17 @@
     <script src="search.js"></script>
     <script src="event/tempChange.js"></script>
     <script src="geoloc.js"></script>
+   
+        
     <footer class="footer-msg">
-        <h5 class="footer-title" >Built with <i class="fab fa-js"></i> and <i class="fab fa-html5"></i></h5>
+        <h5 class="footer-title"> <i class="fas fa-code"></i> Creators <a title="Obi Wan Kenobi" class="linkers" href="https://github.com/StealthAdder" target="_blank"><i class="fab fa-jedi-order fa-lg"></i></a>&<a title="Saitama" class="linkers" href="https://github.com/DarkSchokolade" target="_blank"><i class="fas fa-user-ninja fa-lg"></i></a></h5>
         <br>
-        <h5 class="footer-title"> <i class="fas fa-code"></i> Creators <a class="linkers" href="https://github.com/StealthAdder" target="_blank"><i class="fab fa-jedi-order fa-lg"></i></a>&<a class="linkers" href="https://github.com/DarkSchokolade" target="_blank"><i class="fas fa-user-ninja fa-lg"></i></a></h5>
-        <br>
-        <h5 class="footer-title" ><i class="fas fa-cloud"></i> API from openweathermap.org</h5>
+        <h5 class="footer-title" >& API <i class="fas fa-cloud"></i> from openweathermap.org</h5><h5 class="footer-title" >Built with <i class="fab fa-js"></i> and <i class="fab fa-html5"></i></h5>
         <br>
         <h5 class="footer-title">Report <i class="fas fa-bug"></i> <i class="fas fa-arrow-right"></i><a href="https://github.com/StealthAdder/Weather-App/issues/new" target="_blank"><i class="fab fa-github"></i></a></h5>
+        <br>
+        <br>
+        <h5 class="footer-title" >Don't Know who is Luke Howard <i class="fas fa-arrow-right"></i><a class="linkers" href="https://en.wikipedia.org/wiki/Luke_Howard" target="_blank"><i class="fas fa-user-astronaut"></i></a></h5>
     </footer>
 </body>
 </html>
