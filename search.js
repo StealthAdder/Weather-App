@@ -33,7 +33,7 @@ window.addEventListener('load', () => {
             })
             // then data
             .then(data => {
-                // console.log(data);
+                console.log(data);
                 if (data.cod == "404") {
                     alert ("City Not Found!");
                     window.location.reload();
@@ -43,6 +43,8 @@ window.addEventListener('load', () => {
                     const { temp, humidity } = data.main;
                     const { lon, lat } = data.coord;
                     const { speed, deg} = data.wind;
+                    const { country } = data.sys;
+                    
 
                     // Conversion of speed 
                     const wspeed = Math.round(parseFloat(speed*1.609));
@@ -59,13 +61,13 @@ window.addEventListener('load', () => {
     
                     temperatureDegree.textContent = parseFloat(temp);
                     temperatureDescription.textContent = description;
-                    locationTimezone.textContent = data.name;
+                    locationTimezone.textContent = `${data.name}, ${country}`;
                     let celsius = (temp - 32) * (5 / 9);
-                    locationIcon.innerHTML = `<img src=http://openweathermap.org/img/wn/${icon}@4x.png>`;
+                    locationIcon.innerHTML = `<img src=https://openweathermap.org/img/wn/${icon}@4x.png>`;
                     
-                    
+                    const APIKEY = 'b8c4531288d44830bb89c52d47db5542';
                     // new api
-                    time_api = `http://api.geonames.org/timezoneJSON?lat=${lat}&lng=${lon}&username=stealthadder`;
+                    time_api = `https://api.ipgeolocation.io/astronomy?apiKey=${APIKEY}&lat=${lat}&long=${lon}`;
 
                     fetch(time_api)
                         .then(Response => {
@@ -76,7 +78,8 @@ window.addEventListener('load', () => {
                             // console.log(time_data);
                             let sunrise = time_data.sunrise;
                             const sunset = time_data.sunset;
-                            const time = time_data.time;
+                            const time = time_data.current_time;
+                            const date = time_data.date;
 
                             // Sunrise, sunset, and humidity
                             let sunriseTime = document.querySelector('.sunrise-time');
@@ -89,28 +92,13 @@ window.addEventListener('load', () => {
 
                             let windSpeed = document.querySelector('.wind-speed');
                             
-                            //// SUNRISE INSTANCE ////
-                            let sunrStr = sunrise.split(" ");
-                            // sunriseDate = date of sunrise
-                            // sriseTime = sunrise time
-                            let sunriseDate = sunrStr[0];
-                            let sriseTime = sunrStr[1];
-
-
-                            //// SUNSET INSTANCE  ////
-                            let sunsStr = sunset.split(" ");
-                            // sunsetDate = sunset date
-                            // ssetTime = sunset time
-                            let sunsetDate = sunsStr[0];
-                            let ssetTime = sunsStr[1];
 
                             //// CURRENT TIME ////
-                            let ctime = time.split(" ");
+                            let ctime = time.split(".");
+                            let Time = ctime[0];
 
-                            // Time = time
-                            let Time = ctime[1];
-                            let cdate = ctime[0];
-                            let ccdate = cdate.split("-");
+                            // DD MM YYYY Formating
+                            let ccdate = date.split("-");
 
                             let y = ccdate[0];
                             let m = ccdate[1];
@@ -153,9 +141,9 @@ window.addEventListener('load', () => {
                             prepDetails();
                             
                             // add sunrise time
-                            sunriseTime.innerHTML = sriseTime;
+                            sunriseTime.innerHTML = sunrise;
                             // add sunset time
-                            sunsetTime.innerHTML = ssetTime;
+                            sunsetTime.innerHTML = sunset;
                             // add humidity value
                             humidPerct.innerHTML = `${humidity}%`;
                             currentTime.innerHTML = `${Time} ${d}-${m}-${y}`;
