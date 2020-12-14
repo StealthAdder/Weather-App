@@ -1,209 +1,235 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
 body {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-family: 'Roboto', sans-serif;
-    color: white;
-    background-color: #000000;
-    background-image: linear-gradient(147deg, #000000 0%, #2c3e50 74%);
-
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	font-family: "Roboto";
+	color: white;
+	background-color: #182b3a;
+	background-image: linear-gradient(315deg, #182b3a 0%, #20a4f3 74%);
 }
 
-.location, .temperature {
-    height: 15vh;
-    width: 50%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center; 
+.location,
+.temperature {
+	height: 15vh;
+	width: 50%;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
 }
 .location {
-    height: 22vh;
-    width: 60%;
+	height: 22vh;
+	width: 60%;
 }
 
-.location1, .location-search {
-    height: 15vh;
-    width: 50%;
-    /* flex-direction: row; */
-    display: flex;
-    justify-content: center;
-    align-items: center; 
+.location1,
+.location-search {
+	height: 15vh;
+	width: 50%;
+	/* flex-direction: row; */
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .location-search {
-    height: 12vh;
+	height: 12vh;
 }
 
-.set-btn, a {
-    font-size: 20px;
-    padding: 10px 10px;
-    color: white;
-    text-decoration: none;
+.set-btn,
+a {
+	font-size: 20px;
+	padding: 10px 10px;
+	color: white;
+	text-decoration: none;
 }
 
 .wicon {
-    pointer-events: none;
-    max-height: 50%;
+	pointer-events: none;
+	max-height: 50%;
 }
 
 /* Search based on City */
 .c-search {
-    border-style: none;
-    border-radius: 0.2rem;
-    min-width: 300px;
-    padding: 8px 16px;
-    font-size: 1.5rem;
-    margin: 5px;
-    outline: none;
+	border-style: none;
+	border-radius: 0.2rem;
+	min-width: 300px;
+	padding: 8px 16px;
+	font-size: 1.5rem;
+	margin: 5px;
+	outline: none;
 }
 
 .city {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
 }
 
-.fa ,.fa-search, .fa-2x, .fa-map-marked-alt{
-    pointer-events: none;
-    cursor: pointer;
-    color: white;
+.fa,
+.fa-search,
+.fa-2x,
+.fa-map-marked-alt {
+	pointer-events: none;
+	cursor: pointer;
+	color: white;
 }
 
 .fa-map-marked-alt-geoloc-red {
-    color: rgb(255, 32, 32);
+	color: rgb(255, 32, 32);
 }
 
 .fa-sync-alt {
-    cursor: pointer;
-    background-color: transparent;
-    color: lightsteelblue;
+	cursor: pointer;
+	background-color: transparent;
+	color: lightsteelblue;
 }
 
 .temp-btn {
-    background-color: transparent;
-    border-color: transparent;
-    cursor: pointer;
-    padding: 5px ;
-    outline: none;
+	background-color: transparent;
+	border-color: transparent;
+	cursor: pointer;
+	padding: 5px;
+	outline: none;
 }
 
-.s-btn,  .l-btn{
-    cursor: pointer;
-    padding: 6px 6px;
-    border-radius: 5rem;
-    outline: none;
-    border-style: none;
-    background-color: transparent;
+.s-btn,
+.l-btn {
+	cursor: pointer;
+	padding: 6px 6px;
+	border-radius: 5rem;
+	outline: none;
+	border-style: none;
+	background-color: transparent;
 }
 
 /* details sun rise and set */
 
 .weather-details {
-    display: flex;
+	display: flex;
 }
 
-
-.sunrise, .sunset, .humidity, .current-time-section, .Wind{
-    padding: 5px 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.sunrise,
+.sunset,
+.humidity,
+.current-time-section,
+.Wind {
+	padding: 5px 20px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 
 .degree-section {
-    padding: 5px 20px;
+	padding: 5px 20px;
 }
 
 /* TEMP SECTION */
 .temperature-degree {
-    font-weight: bolder;
-    font-size: 22px;
+	font-weight: bolder;
+	font-size: 22px;
 }
 
 .tempR {
-    font-weight: bolder;
-    font-size: 23px;
+	font-weight: bolder;
+	font-size: 23px;
 }
 
 .temperature-description {
-    padding: 10px 5px;
-    font-size: 2rem;
-    text-transform: capitalize;
+	padding: 10px 5px;
+	font-size: 2rem;
+	text-transform: capitalize;
 }
 
 /* titles in the detail section */
-.s-title, .ss-title, .h-title, .tp-title, .w-title{
-    padding: 5px;
+.s-title,
+.ss-title,
+.h-title,
+.tp-title,
+.w-title {
+	padding: 5px;
 }
 
-.sunrise-time, .sunset-time, .humid-perct, .wind-speed {
-    padding: 5px;
+.sunrise-time,
+.sunset-time,
+.humid-perct,
+.wind-speed {
+	padding: 5px;
 }
 
 .temperature-degree {
-    padding: 10px 0px 0px 5px;
+	padding: 10px 0px 0px 5px;
 }
 
 .tempR {
-    padding: 10px 0px 0px 0px;
+	padding: 10px 0px 0px 0px;
 }
 
 /* Current Time info */
-.current-time, .time-clock{
-    padding: 5px;
+.current-time,
+.time-clock {
+	padding: 5px;
 }
 
 /* title center */
 .c-title {
-    text-align: center;
+	text-align: center;
 }
 
 img {
-    border-radius: 2rem;
-    border-style: none;
-    width: 160px;
-    height: 160px;
-    outline: none;
-    pointer-events: none;
+	border-radius: 2rem;
+	border-style: none;
+	width: 160px;
+	height: 160px;
+	outline: none;
+	pointer-events: none;
 }
 
 /* Beta style */
 
 .beta {
-    border-style: inset;
-    padding: 3px 6px;
+	border-style: inset;
+	padding: 3px 6px;
 
-    border-radius: 1.2rem;
-    border-color: #3FB950;
-    color: #3FB950;
+	border-radius: 1.2rem;
+	border-color: #3fb950;
+	color: #3fb950;
 }
 
 /* footer */
 .footer-msg {
-    color: #000000;
-    margin-top: 3vh;
-    margin-left: 40%;
+	color: #000000;
+	margin-top: 3vh;
+	margin-left: 40%;
 }
-
 
 /* CREDITS */
-.fa-user-ninja::after,.fa-user-ninja::before, .fa-jedi-order::after,.fa-jedi-order::before, .fa-user-astronaut::before, .fa-user-astronaut::after, .fa-github {
-    color: #000000;
+.fa-user-ninja::after,
+.fa-user-ninja::before,
+.fa-jedi-order::after,
+.fa-jedi-order::before,
+.fa-user-astronaut::before,
+.fa-user-astronaut::after,
+.fa-github {
+	color: #000000;
+	/* color: rgb(170, 161, 161); */
 }
 
-.footer-title , .credit-title{
-    padding: 2px 2px;
-    float: right;
+.footer-title,
+.credit-title {
+	padding: 2px 2px;
+	float: right;
+	color: #000000;
+	/* color: rgb(170, 161, 161); */
 }
 
 .linkers {
-    padding: 5px;
+	padding: 5px;
 }

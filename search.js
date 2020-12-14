@@ -18,8 +18,8 @@ window.addEventListener('load', () => {
     function getCity (event) {
         event.preventDefault();
         // removeEventListener the gps
-        
         const city = searchCity.value;
+
         // use different one.
         const API_KEY = 'd79833c05a478f4a18930dd92e8b6d12';
 
