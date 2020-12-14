@@ -32,7 +32,7 @@ body {
 .location-search {
 	height: 15vh;
 	width: 50%;
-	/* flex-direction: row; */
+	margin-top: 10px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
