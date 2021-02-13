@@ -25,7 +25,7 @@ body {
 }
 .location {
 	height: 22vh;
-	width: 60%;
+	width: 50%;
 }
 
 .location1,
@@ -118,13 +118,19 @@ a {
 .sunrise,
 .sunset,
 .humidity,
-.current-time-section,
 .Wind {
 	padding: 5px 20px;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+}
+
+.current-time-section {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;	
 }
 
 .degree-section {
@@ -183,14 +189,6 @@ a {
 	text-align: center;
 }
 
-img {
-	border-radius: 2rem;
-	border-style: none;
-	width: 160px;
-	height: 160px;
-	outline: none;
-	pointer-events: none;
-}
 
 /* Beta style */
 
