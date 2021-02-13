@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="icon/weather-app.png" type="image/x-icon">
     <title>Luke Howard's Weather App</title>
 </head>
@@ -33,7 +33,7 @@
     </div>
     <div class="location">
         <h1 class="location-timezone"></h1>
-        <div class="weather-icon"><img src="Error.src" onerror="this.style.display='none'"></div>
+        <div class="weather-icon"><canvas id="icon1" width="128" height="128" onerror="this.style.display='none'"></canvas></div>
         <div class="current-time-section">
             <h3 class="c-title"></h3><span class="time-clock"></span><h3 class="current-time"></h3>
         </div>
@@ -78,9 +78,10 @@
         <br>
         <h5 class="footer-title" >Don't Know who is Luke Howard <i class="fas fa-arrow-right"></i><a class="linkers" href="https://en.wikipedia.org/wiki/Luke_Howard" target="_blank"><i class="fas fa-user-astronaut"></i></a></h5>
     </footer>
-
+    <script src="skycons.js"></script>
     <script src="search.js"></script>
     <script src="event/tempChange.js"></script>
     <script src="geoloc.js"></script>
+
 </body>
 </html>

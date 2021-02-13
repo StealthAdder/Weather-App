@@ -81,7 +81,71 @@ function geoLoc () {
                             temperatureDescription.textContent = description;
                             locationTimezone.textContent = `${data.name}, ${country}`;
                             let celsius = (temp - 32) * (5 / 9);
-                            locationIcon.innerHTML = `<img src=https://openweathermap.org/img/wn/${icon}@4x.png>`;
+                            // switch
+                            function switchResult(icon) {
+                                switch(icon) {
+                                    case "01n":
+                                        return "CLEAR_NIGHT";
+                                    case "01d":
+                                        return "CLEAR_DAY";
+                
+                                    case "02n":
+                                        return "PARTLY_CLOUDY_NIGHT";
+                                    case "02d":
+                                        // clouds
+                                        return "PARTLY_CLOUDY_DAY";
+                
+                                    case "03n":
+                                        return "PARTLY_CLOUDY_NIGHT";
+                                    case "03d":
+                                        // scattered clouds
+                                        return "PARTLY_CLOUDY_DAY";
+                                    
+                                    case "04n":
+                                        return "PARTLY_CLOUDY_NIGHT";
+                                    case "04d":
+                                        // broken clouds
+                                        return "PARTLY_CLOUDY_DAY";
+                
+                                    case "09n":
+                                    case "09d":
+                                        // shower rain
+                                        return "SLEET";
+                                    
+                                    case "10n":
+                                    case "10d":
+                                        // rain
+                                        return "RAIN";
+                
+                                    case "11n":
+                                    case "11d":
+                                        // thunderstorm
+                                        return "RAIN";
+                
+                                    case "13n":
+                                    case "13d":
+                                        // snow
+                                        return "SNOW";
+                
+                                    case "50n":
+                                    case "50d":
+                                        // mist
+                                        return "FOG";
+                
+                                    default :
+                                        return ":warning: Error";
+                                }
+                            }
+                            let cli = switchResult(icon);
+
+                            console.log(cli);
+                            const currentIconID = cli.replace(/_/g, "-").toLowerCase();
+                            console.log(currentIconID);
+                            
+                            // locationIcon.innerHTML = `<img src=https://openweathermap.org/img/wn/${icon}@4x.png>`;
+                            var skycons = new Skycons({"color": "white"});
+                            skycons.add(document.getElementById('icon1'), Skycons[cli]);
+                            skycons.play();
 
                             const APIKEY = 'b8c4531288d44830bb89c52d47db5542';
                             // new api
